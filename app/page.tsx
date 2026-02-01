@@ -2,6 +2,7 @@
 
 import { Header } from '@/components/header';
 import { About } from '@/components/about';
+import { Experience } from '@/components/experience';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="mx-auto max-w-3xl px-4 py-10 md:py-20">
         <Header />
         <About />
+        <Experience />
       </div>
     </div>
   );
