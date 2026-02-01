@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -15,9 +16,19 @@ export default function Home() {
           className="mb-12 flex items-start justify-between"
         >
           <div>
-            <h1 className="mb-2 inline-block bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-4xl font-bold text-transparent drop-shadow-xl">
-              Stanislav Muntyan
-            </h1>
+            <div className="mb-2 flex items-center gap-3">
+              <h1 className="inline-block bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-4xl font-bold text-transparent drop-shadow-xl">
+                Stanislav Muntyan
+              </h1>
+              <a
+                href="https://github.com/gobbledyglomp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl text-slate-600 transition-colors hover:text-black dark:text-slate-400 dark:hover:text-white"
+              >
+                <FaGithub />
+              </a>
+            </div>
             <p className="text-lg text-slate-600 dark:text-slate-400">
               Junior Full-Stack Developer
             </p>
