@@ -26,7 +26,7 @@ export function Header() {
             <FaGithub />
           </a>
         </div>
-        <p className="text-lg text-slate-600 duration-300 dark:text-slate-400">
+        <p className="mb-0.5 text-lg text-slate-600 duration-300 dark:text-slate-400">
           Junior Full-Stack Developer
         </p>
         <p className="text-sm text-slate-600 duration-300 dark:text-slate-400">
