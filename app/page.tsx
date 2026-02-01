@@ -1,32 +1,33 @@
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+'use client';
+
+import { motion } from 'framer-motion';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-50 p-4 transition-colors duration-300 dark:bg-slate-950">
-      <div className="absolute top-4 right-4">
-        <ThemeToggle />
+    <div className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
+      <div className="mx-auto max-w-3xl px-4 py-20">
+        {/* Header */}
+        <motion.header
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 flex items-start justify-between"
+        >
+          <div>
+            <h1 className="mb-2 inline-block bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-4xl font-bold text-transparent">
+              Stanislav Muntyan
+            </h1>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+              Junior Full-Stack Developer
+            </p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Zaragoza, Spain
+            </p>
+          </div>
+          <ThemeToggle />
+        </motion.header>
       </div>
-
-      <Card className="w-[350px] shadow-lg">
-        <CardHeader>
-          <CardTitle>Template</CardTitle>
-          <CardDescription>My portfolio is under construction.</CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-4">
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Current Status: <strong>Building & Deploying</strong>
-          </p>
-          <Button className="w-full">Notify Me</Button>
-        </CardContent>
-      </Card>
-    </main>
+    </div>
   );
 }
