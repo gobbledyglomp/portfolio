@@ -24,15 +24,15 @@ export default function Home() {
                 href="https://github.com/gobbledyglomp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-4xl text-slate-600 transition-colors hover:text-black dark:text-slate-400 dark:hover:text-white"
+                className="text-4xl text-slate-600 transition-colors duration-300 hover:text-black dark:text-slate-400 dark:hover:text-white"
               >
                 <FaGithub />
               </a>
             </div>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
+            <p className="text-lg text-slate-600 duration-300 dark:text-slate-400">
               Junior Full-Stack Developer
             </p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-sm text-slate-600 duration-300 dark:text-slate-400">
               Zaragoza, Spain
             </p>
           </div>
