@@ -1,14 +1,5 @@
-'use client';
-
 import { motion } from 'framer-motion';
-
-function Bold({ children }: { children: React.ReactNode }) {
-  return (
-    <strong className="text-slate-800 duration-300 dark:text-slate-300">
-      {children}
-    </strong>
-  );
-}
+import { Bold } from '@/components/bold';
 
 export function About() {
   return (
