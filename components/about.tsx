@@ -14,7 +14,7 @@ export function About() {
       </h2>
       <div className="space-y-4 text-slate-600 duration-300 dark:text-slate-400">
         <p>
-          Passionate about web development, I specialize in the{' '}
+          Passionate about full-stack web development, I specialize in the{' '}
           <Bold>MERN stack</Bold> and scalable architecture. From designing
           interactive frontends with <Bold>React</Bold> to structuring robust{' '}
           <Bold>RESTful APIs</Bold> with <Bold>Node.js</Bold> and{' '}
