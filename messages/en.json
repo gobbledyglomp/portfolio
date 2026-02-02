@@ -2,5 +2,42 @@
   "Header": {
     "role": "Junior Full-Stack Developer",
     "location": "Zaragoza, Spain"
+  },
+  "About": {
+    "title": "Building Scalable Solutions",
+    "p1": "Passionate about full-stack web development, I specialize in the <bold>MERN stack</bold> and scalable architecture. From designing interactive frontends with <bold>React</bold> to structuring robust <bold>RESTful APIs</bold> with <bold>Node.js</bold> and <bold>Express</bold>, I love the entire process of bringing digital products to life.",
+    "p2": "Besides, I am a dedicated self-learner who adapts quickly to new technologies. I bring a detail-oriented mindset, reinforced by my background in <bold>QA and testing</bold>, ensuring that I not only build software that works but solutions that are reliable and efficient."
+  },
+  "Experience": {
+    "title": "Experience",
+    "qa": {
+      "title": "QA Tester",
+      "company": "Quelinka",
+      "date": "Feb 2025 – Mar 2025",
+      "description": "Rapidly evolved from manual testing to engineering automated solutions. I built E2E test suites with <bold>Cypress</bold> and simulated heavy traffic with <bold>JMeter</bold>."
+    }
+  },
+  "Education": {
+    "title": "Education",
+    "degree": "Multiplatform Application Development",
+    "school": "Davante MEDAC",
+    "date": "2024 - Present",
+    "description": "Technical training focused on building scalable applications across different platforms. Gaining experience with <bold>Java</bold>, <bold>SQL</bold>, and enterprise-grade development practices."
+  },
+  "Projects": {
+    "title": "Projects",
+    "contactManager": {
+      "title": "Full Stack Contact Manager",
+      "description": "A secure full-stack application for managing personal contacts. Features a robust RESTful API, persistent data storage, and efficient asynchronous server communication."
+    },
+    "blogApp": {
+      "title": "Blog App",
+      "description": "A scalable blogging platform featuring global state management and dynamic routing. Implements secure user authentication (JWT) and responsive UI design."
+    },
+    "links": {
+      "code": "Code",
+      "liveDemo": "Live Demo",
+      "freeTier": "This project is on a free tier. It might take ~60s to wake up!"
+    }
   }
 }

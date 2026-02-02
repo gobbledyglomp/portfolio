@@ -12,33 +12,35 @@ import {
 import { Bold } from '@/components/bold';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-const projects = [
-  {
-    title: 'Full Stack Contact Manager',
-    description:
-      'A secure full-stack application for managing personal contacts. Features a robust RESTful API, persistent data storage, and efficient asynchronous server communication.',
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
-    github: 'https://github.com/gobbledyglomp/full-stack-open-phonebook',
-    demo: 'https://full-stack-open-phonebook-bkyp.onrender.com',
-  },
-  {
-    title: 'Blog App',
-    description:
-      'A scalable blogging platform featuring global state management and dynamic routing. Implements secure user authentication (JWT) and responsive UI design.',
-    stack: [
-      'MERN Stack',
-      'Redux',
-      'React Router',
-      'JWT',
-      'Bcrypt',
-      'Bootstrap',
-    ],
-    github: 'https://github.com/gobbledyglomp/full-stack-open-blog-app',
-    demo: 'https://full-stack-open-blog-app.onrender.com',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export function Projects() {
+  const t = useTranslations('Projects');
+
+  const projects = [
+    {
+      title: t('contactManager.title'),
+      description: t('contactManager.description'),
+      stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
+      github: 'https://github.com/gobbledyglomp/full-stack-open-phonebook',
+      demo: 'https://full-stack-open-phonebook-bkyp.onrender.com',
+    },
+    {
+      title: t('blogApp.title'),
+      description: t('blogApp.description'),
+      stack: [
+        'MERN Stack',
+        'Redux',
+        'React Router',
+        'JWT',
+        'Bcrypt',
+        'Bootstrap',
+      ],
+      github: 'https://github.com/gobbledyglomp/full-stack-open-blog-app',
+      demo: 'https://full-stack-open-blog-app.onrender.com',
+    },
+  ];
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -48,7 +50,7 @@ export function Projects() {
       className="mb-12"
     >
       <h2 className="mb-8 bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-3xl font-bold text-transparent drop-shadow-md dark:from-rose-500 dark:via-indigo-400 dark:to-sky-400">
-        Projects
+        {t('title')}
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -89,14 +91,13 @@ export function Projects() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-black dark:text-slate-400 dark:hover:text-white"
               >
-                <FaGithub className="text-lg" /> Code
+                <FaGithub className="text-lg" /> {t('links.code')}
               </a>
               {/* Live Demo*/}
               {project.demo && (
                 <div className="group relative">
                   <span className="pointer-events-none absolute -top-12 left-1/2 w-48 -translate-x-1/2 rounded bg-slate-900 px-2 py-1 text-center text-xs text-slate-50 opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 dark:bg-slate-50 dark:text-slate-900">
-                    This project is on a free tier. It might take ~60s to wake
-                    up!
+                    {t('links.freeTier')}
                     <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-slate-900 dark:bg-slate-50"></span>
                   </span>
                   <a
@@ -105,7 +106,8 @@ export function Projects() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-black dark:text-slate-400 dark:hover:text-white"
                   >
-                    <FaExternalLinkAlt className="text-sm" /> Live Demo
+                    <FaExternalLinkAlt className="text-sm" />{' '}
+                    {t('links.liveDemo')}
                   </a>
                 </div>
               )}

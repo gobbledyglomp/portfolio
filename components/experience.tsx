@@ -10,7 +10,10 @@ import {
 } from '@/components/ui/card';
 import { Bold } from '@/components/bold';
 
+import { useTranslations } from 'next-intl';
+
 export function Experience() {
+  const t = useTranslations('Experience');
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -20,7 +23,7 @@ export function Experience() {
       className="mb-12"
     >
       <h2 className="mb-8 bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-3xl font-bold text-transparent drop-shadow-md dark:from-rose-500 dark:via-indigo-400 dark:to-sky-400">
-        Experience
+        {t('title')}
       </h2>
 
       <div className="space-y-6">
@@ -30,25 +33,25 @@ export function Experience() {
               <div>
                 {/* Job title */}
                 <CardTitle className="text-xl font-bold text-slate-800 duration-300 dark:text-slate-100">
-                  QA Tester
+                  {t('qa.title')}
                 </CardTitle>
                 {/* Company name */}
                 <CardDescription className="text-base text-rose-600 duration-300 dark:text-rose-400">
-                  Quelinka
+                  {t('qa.company')}
                 </CardDescription>
               </div>
               {/* Date range */}
               <span className="text-sm font-medium text-slate-500 duration-300 dark:text-slate-400">
-                Feb 2025 – Mar 2025
+                {t('qa.date')}
               </span>
             </div>
           </CardHeader>
           {/* Job description */}
           <CardContent>
             <p className="text-slate-600 duration-300 dark:text-slate-400">
-              Rapidly evolved from manual testing to engineering automated
-              solutions. I built E2E test suites with <Bold>Cypress</Bold> and
-              simulated heavy traffic with <Bold>JMeter</Bold>.
+              {t.rich('qa.description', {
+                bold: (chunks) => <Bold>{chunks}</Bold>,
+              })}
             </p>
           </CardContent>
         </Card>
