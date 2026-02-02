@@ -9,9 +9,9 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
-      className="h-10 w-10 rounded-full"
+      className="dark:bg-input/10 h-10 w-10 rounded-full dark:border-zinc-950"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <FaSun className="absolute h-6 w-6 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />

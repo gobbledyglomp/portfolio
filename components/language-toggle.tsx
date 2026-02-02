@@ -16,9 +16,9 @@ export function LanguageToggle() {
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="sm"
-      className="h-10 w-10 rounded-full font-bold"
+      className="dark:bg-input/10 h-10 w-10 rounded-full font-bold dark:border-zinc-950"
       onClick={toggleLanguage}
       aria-label="Toggle Language"
     >
