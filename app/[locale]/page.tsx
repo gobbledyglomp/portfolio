@@ -9,12 +9,15 @@ import { Projects } from '@/components/projects';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
-      <div className="mx-auto max-w-3xl px-4 py-10 md:py-20">
+      <div className="mx-auto max-w-3xl px-4 pt-10 pb-6 md:pt-20 md:pb-10">
         <Header />
         <About />
         <Experience />
         <Education />
         <Projects />
+        <footer className="mt-16 text-center text-sm text-slate-500 dark:text-slate-400">
+          © 2026 Stanislav Muntyan
+        </footer>
       </div>
     </div>
   );
