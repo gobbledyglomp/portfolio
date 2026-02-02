@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { FaGithub } from 'react-icons/fa';
+import { LanguageToggle } from '@/components/language-toggle';
 
 import { useTranslations } from 'next-intl';
 
@@ -42,7 +43,10 @@ export function Header() {
           {t('location')}
         </p>
       </div>
-      <ThemeToggle />
+      <div className="flex items-center gap-2">
+        <LanguageToggle />
+        <ThemeToggle />
+      </div>
     </motion.header>
   );
 }
