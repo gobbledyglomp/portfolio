@@ -96,7 +96,7 @@ export function Projects() {
               {/* Live Demo*/}
               {project.demo && (
                 <div className="group relative">
-                  <span className="pointer-events-none absolute -top-12 left-1/2 w-48 -translate-x-1/2 rounded bg-slate-900 px-2 py-1 text-center text-xs text-slate-50 opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 dark:bg-slate-50 dark:text-slate-900">
+                  <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 w-48 -translate-x-1/2 rounded bg-slate-900 px-2 py-1 text-center text-xs text-slate-50 opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 dark:bg-slate-50 dark:text-slate-900">
                     {t('links.freeTier')}
                     <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-slate-900 dark:bg-slate-50"></span>
                   </span>
