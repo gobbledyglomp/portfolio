@@ -20,6 +20,7 @@ export function LanguageToggle() {
       size="sm"
       className="h-10 w-10 rounded-full font-bold"
       onClick={toggleLanguage}
+      aria-label="Toggle Language"
     >
       {locale === 'en' ? 'ES' : 'EN'}
     </Button>

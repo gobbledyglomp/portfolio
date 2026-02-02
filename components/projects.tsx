@@ -6,10 +6,8 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardFooter,
 } from '@/components/ui/card';
-import { Bold } from '@/components/bold';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 import { useTranslations } from 'next-intl';

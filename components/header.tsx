@@ -28,6 +28,7 @@ export function Header() {
               href="https://github.com/gobbledyglomp"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="ml-3 inline-block text-3xl text-slate-600 transition-colors duration-300 hover:text-black dark:text-slate-400 dark:hover:text-white"
             >
               <FaGithub className="inline align-baseline" />
