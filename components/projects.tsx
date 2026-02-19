@@ -48,7 +48,7 @@ export function Projects() {
   const t = useTranslations('Projects');
 
   return (
-    <section id="projects" className="py-14">
+    <section id="projects" className="scroll-mt-4 py-14">
       {/* Section heading — its own gentle fade */}
       <motion.h2
         initial={{ opacity: 0, y: 12 }}

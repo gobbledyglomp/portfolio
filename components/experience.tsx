@@ -8,7 +8,7 @@ export function Experience() {
   const t = useTranslations('Experience');
 
   return (
-    <section id="experience" className="py-14">
+    <section id="experience" className="scroll-mt-4 py-14">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
