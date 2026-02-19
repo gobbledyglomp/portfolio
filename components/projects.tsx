@@ -30,7 +30,7 @@ export function Projects() {
   const t = useTranslations('Projects');
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-14">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -8,7 +8,7 @@ export function Education() {
   const t = useTranslations('Education');
 
   return (
-    <section id="education" className="py-24">
+    <section id="education" className="py-14">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
