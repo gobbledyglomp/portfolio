@@ -31,12 +31,14 @@ export function Navbar() {
     const id = href.replace('#', '');
 
     if (isHome) {
-      // On the home page — smooth scroll directly
+      // On the home page — smooth scroll directly and update URL hash
       if (id === 'home') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.pushState(null, '', ' ');
       } else {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', `#${id}`);
       }
     } else {
       // On another page (e.g. /blog) — navigate home with the hash.
