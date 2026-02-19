@@ -107,6 +107,16 @@ export function Hero() {
           GitHub
         </motion.a>
       </div>
+
+      {/* Glowing cyan seam — bottom edge of the hero section */}
+      <div
+        className="pointer-events-none absolute right-0 bottom-0 left-0 h-px"
+        style={{
+          background: 'rgba(0, 229, 255, 0.35)',
+          boxShadow:
+            '0 0 6px 1px rgba(0, 229, 255, 0.4), 0 0 20px 4px rgba(0, 229, 255, 0.2), 0 0 60px 12px rgba(0, 229, 255, 0.07)',
+        }}
+      />
     </section>
   );
 }

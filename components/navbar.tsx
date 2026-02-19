@@ -53,7 +53,14 @@ export function Navbar() {
     'font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)';
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-(--border-color) bg-(--bg)/80 backdrop-blur-xl">
+    <nav
+      className="fixed top-0 left-0 z-50 w-full bg-(--bg)/80 backdrop-blur-xl"
+      style={{
+        borderBottom: '1px solid rgba(0, 229, 255, 0.18)',
+        boxShadow:
+          '0 1px 6px 0px rgba(0, 229, 255, 0.2), 0 2px 20px 2px rgba(0, 229, 255, 0.08)',
+      }}
+    >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Left: nav links (desktop) */}
         <ul className="hidden items-center gap-8 md:flex">
