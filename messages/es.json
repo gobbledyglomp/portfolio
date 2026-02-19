@@ -1,12 +1,16 @@
 {
-  "Header": {
-    "role": "Desarrollador Full-Stack Junior",
-    "location": "Zaragoza, España"
+  "Navbar": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "projects": "Proyectos",
+    "blog": "Blog"
   },
-  "About": {
-    "title": "Construyendo Soluciones Escalables",
-    "p1": "Apasionado por el desarrollo web full-stack, me especializo en el <bold>stack MERN</bold> y arquitectura escalable. Desde el diseño de frontends interactivos con <bold>React</bold> hasta la estructuración de <bold>APIs RESTful</bold> robustas con <bold>Node.js</bold> y <bold>Express</bold>, me encanta todo el proceso de dar vida a productos digitales.",
-    "p2": "Además, soy un autodidacta dedicado que se adapta rápidamente a nuevas tecnologías. Aporto una mentalidad orientada al detalle, reforzada por mi experiencia en <bold>QA y testing</bold>, asegurando que no solo construyo software que funciona, sino soluciones fiables y eficientes."
+  "Hero": {
+    "heading": "Stanislav Muntyan",
+    "role": "Desarrollador Full-Stack Junior",
+    "location": "Zaragoza, España",
+    "intro": "Apasionado por el desarrollo web full-stack, me especializo en el stack MERN y arquitectura escalable. Desde el diseño de frontends interactivos con React hasta la estructuración de APIs RESTful robustas con Node.js, me encanta dar vida a productos digitales. Un autodidacta dedicado con ojo para la calidad, reforzado por mi experiencia en QA y testing."
   },
   "Experience": {
     "title": "Experiencia",
@@ -14,7 +18,7 @@
       "title": "QA Tester",
       "company": "Quelinka",
       "date": "Feb 2025 – Mar 2025",
-      "description": "Evolución rápida de pruebas manuales a ingeniería de soluciones automatizadas. Desarrollé suites de pruebas E2E con <bold>Cypress</bold> y simulé tráfico pesado con <bold>JMeter</bold>."
+      "description": "Evolución rápida de pruebas manuales a ingeniería de soluciones automatizadas. Desarrollé suites de pruebas E2E con Cypress y simulé tráfico pesado con JMeter."
     }
   },
   "Education": {
@@ -22,7 +26,7 @@
     "degree": "Desarrollo de Aplicaciones Multiplataforma",
     "school": "Davante MEDAC",
     "date": "2024 - Actualidad",
-    "description": "Formación técnica centrada en la construcción de aplicaciones escalables en diferentes plataformas. Ganando experiencia con <bold>Java</bold>, <bold>SQL</bold> y prácticas de desarrollo empresarial."
+    "description": "Formación técnica centrada en la construcción de aplicaciones escalables en diferentes plataformas. Ganando experiencia con Java, SQL y prácticas de desarrollo empresarial."
   },
   "Projects": {
     "title": "Proyectos",
@@ -39,5 +43,13 @@
       "liveDemo": "Demo en Vivo",
       "freeTier": "Este proyecto está en un servidor gratuito. Puede tardar ~60s en arrancar."
     }
+  },
+  "Blog": {
+    "title": "Blog",
+    "comingSoon": "Próximamente",
+    "description": "Los artículos y pensamientos están en camino. Estate atento."
+  },
+  "Footer": {
+    "copyright": "© 2026 Stanislav Muntyan"
   }
 }

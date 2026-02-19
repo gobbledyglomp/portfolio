@@ -1,12 +1,16 @@
 {
-  "Header": {
-    "role": "Junior Full-Stack Developer",
-    "location": "Zaragoza, Spain"
+  "Navbar": {
+    "home": "Home",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "blog": "Blog"
   },
-  "About": {
-    "title": "Building Scalable Solutions",
-    "p1": "Passionate about full-stack web development, I specialize in the <bold>MERN stack</bold> and scalable architecture. From designing interactive frontends with <bold>React</bold> to structuring robust <bold>RESTful APIs</bold> with <bold>Node.js</bold> and <bold>Express</bold>, I love the entire process of bringing digital products to life.",
-    "p2": "Besides, I am a dedicated self-learner who adapts quickly to new technologies. I bring a detail-oriented mindset, reinforced by my background in <bold>QA and testing</bold>, ensuring that I not only build software that works but solutions that are reliable and efficient."
+  "Hero": {
+    "heading": "Stanislav Muntyan",
+    "role": "Junior Full-Stack Developer",
+    "location": "Zaragoza, Spain",
+    "intro": "Passionate about full-stack web development, I specialize in the MERN stack and scalable architecture. From designing interactive frontends with React to structuring robust RESTful APIs with Node.js, I love bringing digital products to life. A dedicated self-learner with an eye for quality, reinforced by my background in QA and testing."
   },
   "Experience": {
     "title": "Experience",
@@ -14,7 +18,7 @@
       "title": "QA Tester",
       "company": "Quelinka",
       "date": "Feb 2025 – Mar 2025",
-      "description": "Rapidly evolved from manual testing to engineering automated solutions. I built E2E test suites with <bold>Cypress</bold> and simulated heavy traffic with <bold>JMeter</bold>."
+      "description": "Rapidly evolved from manual testing to engineering automated solutions. Built E2E test suites with Cypress and simulated heavy traffic with JMeter."
     }
   },
   "Education": {
@@ -22,7 +26,7 @@
     "degree": "Multiplatform Application Development",
     "school": "Davante MEDAC",
     "date": "2024 - Present",
-    "description": "Technical training focused on building scalable applications across different platforms. Gaining experience with <bold>Java</bold>, <bold>SQL</bold>, and enterprise-grade development practices."
+    "description": "Technical training focused on building scalable applications across different platforms. Gaining experience with Java, SQL, and enterprise-grade development practices."
   },
   "Projects": {
     "title": "Projects",
@@ -39,5 +43,13 @@
       "liveDemo": "Live Demo",
       "freeTier": "This project is on a free tier. It might take ~60s to wake up!"
     }
+  },
+  "Blog": {
+    "title": "Blog",
+    "comingSoon": "Coming Soon",
+    "description": "Articles and thoughts are on the way. Stay tuned."
+  },
+  "Footer": {
+    "copyright": "© 2026 Stanislav Muntyan"
   }
 }
