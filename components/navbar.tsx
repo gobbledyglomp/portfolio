@@ -32,7 +32,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-[var(--border-color)] bg-[var(--bg)]/80 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 z-50 w-full border-b border-(--border-color) bg-(--bg)/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Left: nav links (desktop) */}
         <ul className="hidden items-center gap-8 md:flex">
@@ -41,7 +41,7 @@ export function Navbar() {
               <a
                 href={item.href}
                 onClick={(e) => handleSmoothScroll(e, item.href)}
-                className="font-mono text-sm text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+                className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
               >
                 {t(item.key)}
               </a>
@@ -50,7 +50,7 @@ export function Navbar() {
           <li>
             <Link
               href="/blog"
-              className="font-mono text-sm text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+              className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
             >
               {t('blog')}
             </Link>
@@ -68,7 +68,7 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
-            className="cursor-pointer text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+            className="cursor-pointer text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -83,7 +83,7 @@ export function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-[var(--border-color)] bg-[var(--bg)]/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-(--border-color) bg-(--bg)/95 backdrop-blur-xl md:hidden"
           >
             <ul className="flex flex-col gap-4 px-6 py-6">
               {navItems.map((item) => (
@@ -91,7 +91,7 @@ export function Navbar() {
                   <a
                     href={item.href}
                     onClick={(e) => handleSmoothScroll(e, item.href)}
-                    className="font-mono text-sm text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+                    className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
                   >
                     {t(item.key)}
                   </a>
@@ -101,7 +101,7 @@ export function Navbar() {
                 <Link
                   href="/blog"
                   onClick={() => setMobileOpen(false)}
-                  className="font-mono text-sm text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+                  className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
                 >
                   {t('blog')}
                 </Link>

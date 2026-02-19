@@ -18,19 +18,19 @@ export default function BlogPage() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[var(--cyan)]/20 bg-[var(--cyan)]/5">
-            <Rss size={28} className="text-[var(--cyan)]" />
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-(--cyan)/20 bg-(--cyan)/5">
+            <Rss size={28} className="text-(--cyan)" />
           </div>
 
-          <h1 className="mb-3 font-mono text-3xl font-bold text-[var(--text-bright)] sm:text-4xl">
+          <h1 className="mb-3 font-mono text-3xl font-bold text-(--text-bright) sm:text-4xl">
             {t('title')}
           </h1>
 
-          <p className="mb-2 font-mono text-lg text-[var(--cyan)]">
+          <p className="mb-2 font-mono text-lg text-(--cyan)">
             {t('comingSoon')}
           </p>
 
-          <p className="mx-auto max-w-md text-[var(--text-muted)]">
+          <p className="mx-auto max-w-md text-(--text-muted)">
             {t('description')}
           </p>
         </motion.div>

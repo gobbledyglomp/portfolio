@@ -17,7 +17,7 @@ export function LanguageToggle() {
     <button
       onClick={toggleLanguage}
       aria-label="Toggle Language"
-      className="cursor-pointer font-mono text-sm font-medium text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+      className="cursor-pointer font-mono text-sm font-medium text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
     >
       {locale === 'en' ? 'ES' : 'EN'}
     </button>

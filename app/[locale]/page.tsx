@@ -21,8 +21,8 @@ export default function Home() {
           <Projects />
         </div>
       </main>
-      <footer className="border-t border-[var(--border-color)] py-8 text-center">
-        <p className="font-mono text-sm text-[var(--text-muted)]">
+      <footer className="border-t border-(--border-color) py-8 text-center">
+        <p className="font-mono text-sm text-(--text-muted)">
           {t('copyright')}
         </p>
       </footer>

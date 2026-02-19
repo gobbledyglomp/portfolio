@@ -64,7 +64,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-4 font-mono text-4xl font-bold text-[var(--text-bright)] sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mb-4 font-mono text-4xl font-bold text-(--text-bright) sm:text-5xl md:text-6xl lg:text-7xl"
         >
           {scrambledHeading}
         </motion.h1>
@@ -75,11 +75,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-4"
         >
-          <span className="font-mono text-sm text-[var(--cyan)] sm:text-base">
+          <span className="font-mono text-sm text-(--cyan) sm:text-base">
             {t('role')}
           </span>
-          <span className="hidden text-[var(--border-color)] sm:inline">|</span>
-          <span className="flex items-center gap-1 text-sm text-[var(--text-muted)]">
+          <span className="hidden text-(--border-color) sm:inline">|</span>
+          <span className="flex items-center gap-1 text-sm text-(--text-muted)">
             <MapPin size={14} />
             {t('location')}
           </span>
@@ -89,7 +89,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-[var(--text-muted)] sm:text-lg"
+          className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-(--text-muted) sm:text-lg"
         >
           {t('intro')}
         </motion.p>
@@ -101,7 +101,7 @@ export function Hero() {
           href="https://github.com/gobbledyglomp"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-md border border-[var(--border-color)] bg-[var(--bg-surface)] px-5 py-2.5 font-mono text-sm text-[var(--text-muted)] transition-all duration-300 hover:border-[var(--cyan)] hover:text-[var(--cyan)] hover:shadow-[0_0_15px_rgba(0,229,255,0.15)]"
+          className="inline-flex items-center gap-2 rounded-md border border-(--border-color) bg-(--bg-surface) px-5 py-2.5 font-mono text-sm text-(--text-muted) transition-all duration-300 hover:border-(--cyan) hover:text-(--cyan) hover:shadow-[0_0_15px_rgba(0,229,255,0.15)]"
         >
           <Github size={18} />
           GitHub
