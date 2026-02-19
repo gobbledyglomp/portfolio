@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { LanguageToggle } from '@/components/language-toggle';
 
 const navItems = [
@@ -17,19 +17,36 @@ const navItems = [
 export function Navbar() {
   const t = useTranslations('Navbar');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
-  function handleSmoothScroll(
+  const isHome = pathname === '/';
+
+  function handleNavClick(
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) {
     e.preventDefault();
     setMobileOpen(false);
     const id = href.replace('#', '');
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+
+    if (isHome) {
+      // On the home page — smooth scroll directly
+      if (id === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // On another page (e.g. /blog) — navigate home with the hash.
+      // The browser will jump to the anchor after navigation.
+      router.push(`/#${id}` as '/');
     }
   }
+
+  const linkClass =
+    'font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)';
 
   return (
     <nav className="fixed top-0 left-0 z-50 w-full border-b border-(--border-color) bg-(--bg)/80 backdrop-blur-xl">
@@ -40,18 +57,15 @@ export function Navbar() {
             <li key={item.key}>
               <a
                 href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
-                className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={linkClass}
               >
                 {t(item.key)}
               </a>
             </li>
           ))}
           <li>
-            <Link
-              href="/blog"
-              className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
-            >
+            <Link href="/blog" className={linkClass}>
               {t('blog')}
             </Link>
           </li>
@@ -90,8 +104,8 @@ export function Navbar() {
                 <li key={item.key}>
                   <a
                     href={item.href}
-                    onClick={(e) => handleSmoothScroll(e, item.href)}
-                    className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className={linkClass}
                   >
                     {t(item.key)}
                   </a>
@@ -101,7 +115,7 @@ export function Navbar() {
                 <Link
                   href="/blog"
                   onClick={() => setMobileOpen(false)}
-                  className="font-mono text-sm text-(--text-muted) transition-colors duration-200 hover:text-(--cyan)"
+                  className={linkClass}
                 >
                   {t('blog')}
                 </Link>
