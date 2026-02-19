@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
 import '@/app/globals.css';
+import { SmoothScrollProvider } from '@/components/smooth-scroll-provider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.stanislavmuntyan.com'),
@@ -50,9 +51,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="dark">
-      <body className="min-h-screen bg-[var(--bg)] text-[var(--text)] antialiased">
+      <body className="min-h-screen bg-(--bg) text-(--text) antialiased">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
         </NextIntlClientProvider>
       </body>
     </html>
