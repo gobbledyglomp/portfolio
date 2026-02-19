@@ -1,1 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
+
+/* ─── Design Tokens ─── */
+:root {
+  --bg: #0d0d0d;
+  --bg-surface: #1a1a1a;
+  --bg-surface-hover: #222222;
+  --border-color: #2a2a2a;
+  --text: #e0e0e0;
+  --text-muted: #888888;
+  --text-bright: #ffffff;
+  --cyan: #00e5ff;
+  --cyan-dim: rgba(0, 229, 255, 0.15);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ─── Base ─── */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--cyan-dim);
+    color: var(--cyan);
+  }
+}
+
+/* ─── Hide Scrollbar ─── */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ─── Utility Classes ─── */
+.font-mono {
+  font-family: var(--font-mono);
+}
