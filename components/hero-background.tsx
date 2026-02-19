@@ -1,6 +1,7 @@
 'use client';
 
-import { useRef, useMemo, useEffect } from 'react';
+import { useRef, useMemo, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -102,19 +103,29 @@ function WaveGridSparse() {
 }
 
 export function HeroBackground() {
+  // Stay invisible until the WebGL context is actually ready to render.
+  // This prevents the grid from "popping in" when the user scrolls to the
+  // hero section before WebGL has finished initialising (~300-600ms).
+  const [ready, setReady] = useState(false);
+
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10">
+    <motion.div
+      className="pointer-events-none absolute inset-0 -z-10"
+      animate={{ opacity: ready ? 1 : 0 }}
+      transition={{ duration: 0.9, ease: 'easeOut' }}
+    >
       <Canvas
         camera={{ position: [0, 3, 8], fov: 50 }}
         style={{ width: '100%', height: '100%' }}
         gl={{ alpha: true, antialias: true }}
         scene={{ background: null }}
+        onCreated={() => setReady(true)}
       >
         {/* Fog fades the grid edges into the dark background — infinite feel */}
         <fog attach="fog" args={['#0d0d0d', 6, 20]} />
         <WaveGrid />
         <WaveGridSparse />
       </Canvas>
-    </div>
+    </motion.div>
   );
 }
