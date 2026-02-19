@@ -1,118 +1,112 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from '@/components/ui/card';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-
+import { Github, ExternalLink } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+
+const projectsData = [
+  {
+    key: 'contactManager',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
+    github: 'https://github.com/gobbledyglomp/full-stack-open-phonebook',
+    demo: 'https://full-stack-open-phonebook-bkyp.onrender.com',
+  },
+  {
+    key: 'blogApp',
+    stack: [
+      'MERN Stack',
+      'Redux',
+      'React Router',
+      'JWT',
+      'Bcrypt',
+      'Bootstrap',
+    ],
+    github: 'https://github.com/gobbledyglomp/full-stack-open-blog-app',
+    demo: 'https://full-stack-open-blog-app.onrender.com',
+  },
+];
 
 export function Projects() {
   const t = useTranslations('Projects');
 
-  const projects = [
-    {
-      title: t('contactManager.title'),
-      description: t('contactManager.description'),
-      stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
-      github: 'https://github.com/gobbledyglomp/full-stack-open-phonebook',
-      demo: 'https://full-stack-open-phonebook-bkyp.onrender.com',
-    },
-    {
-      title: t('blogApp.title'),
-      description: t('blogApp.description'),
-      stack: [
-        'MERN Stack',
-        'Redux',
-        'React Router',
-        'JWT',
-        'Bcrypt',
-        'Bootstrap',
-      ],
-      github: 'https://github.com/gobbledyglomp/full-stack-open-blog-app',
-      demo: 'https://full-stack-open-blog-app.onrender.com',
-    },
-  ];
-
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="mb-12"
-    >
-      <h2 className="mb-8 bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-3xl font-bold text-transparent drop-shadow-md dark:from-rose-500 dark:via-indigo-400 dark:to-sky-400">
-        {t('title')}
-      </h2>
+    <section id="projects" className="py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <h2 className="mb-12 font-mono text-2xl font-bold text-[var(--text-bright)] sm:text-3xl">
+          <span className="mr-3 text-[var(--cyan)]">#</span>
+          {t('title')}
+        </h2>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <Card
-            key={index}
-            className="flex flex-col border-slate-200 shadow-sm transition-transform duration-300 hover:scale-[1.02] dark:border-slate-800 dark:bg-slate-950/50"
-          >
-            {/* Title*/}
-            <CardHeader>
-              <CardTitle className="text-xl font-bold text-slate-800 duration-300 dark:text-slate-100">
-                {project.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1">
-              {/* Description*/}
-              <p className="mb-4 text-slate-600 duration-300 dark:text-slate-400">
-                {project.description}
+        <div className="grid gap-6 sm:grid-cols-2">
+          {projectsData.map((project, index) => (
+            <motion.div
+              key={project.key}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className="group flex flex-col rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 transition-all duration-300 hover:border-[var(--cyan)]/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.05)]"
+            >
+              {/* Title */}
+              <h3 className="mb-3 font-mono text-lg font-semibold text-[var(--text-bright)] transition-colors duration-300 group-hover:text-[var(--cyan)]">
+                {t(`${project.key}.title`)}
+              </h3>
+
+              {/* Description */}
+              <p className="mb-5 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">
+                {t(`${project.key}.description`)}
               </p>
-              {/* Stack*/}
-              <div className="flex flex-wrap gap-2">
+
+              {/* Tech tags */}
+              <div className="mb-5 flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                    className="rounded border border-[var(--cyan)]/20 bg-[var(--cyan)]/5 px-2 py-0.5 font-mono text-xs text-[var(--cyan)]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-            </CardContent>
-            {/* Footer*/}
-            <CardFooter className="gap-4">
-              {/* Github*/}
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-black dark:text-slate-400 dark:hover:text-white"
-              >
-                <FaGithub className="text-lg" /> {t('links.code')}
-              </a>
-              {/* Live Demo*/}
-              {project.demo && (
-                <div className="group relative">
-                  <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 w-48 -translate-x-1/2 rounded bg-slate-900 px-2 py-1 text-center text-xs text-slate-50 opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 dark:bg-slate-50 dark:text-slate-900">
-                    {t('links.freeTier')}
-                    <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-slate-900 dark:bg-slate-50"></span>
-                  </span>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-black dark:text-slate-400 dark:hover:text-white"
-                  >
-                    <FaExternalLinkAlt className="text-sm" />{' '}
-                    {t('links.liveDemo')}
-                  </a>
-                </div>
-              )}
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </motion.section>
+
+              {/* Links */}
+              <div className="flex items-center gap-5">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+                >
+                  <Github size={16} />
+                  {t('links.code')}
+                </a>
+                {project.demo && (
+                  <div className="group/demo relative">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--cyan)]"
+                    >
+                      <ExternalLink size={16} />
+                      {t('links.liveDemo')}
+                    </a>
+                    {/* Tooltip */}
+                    <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 w-48 -translate-x-1/2 rounded border border-[var(--border-color)] bg-[var(--bg-surface)] px-3 py-2 text-center text-xs text-[var(--text-muted)] opacity-0 shadow-lg transition-opacity duration-300 group-hover/demo:opacity-100">
+                      {t('links.freeTier')}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 }
