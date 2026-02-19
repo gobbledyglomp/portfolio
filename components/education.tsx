@@ -34,7 +34,7 @@ export function Education() {
             <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-(--text-bright)">
-                  <GraduationCap size={18} className="text-(--cyan)" />
+                  <GraduationCap size={20} className="shrink-0 text-(--cyan)" />
                   {t('degree')}
                 </h3>
                 <p className="mt-1 text-(--cyan)">{t('school')}</p>
