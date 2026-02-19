@@ -11,6 +11,8 @@ const ROWS = 48;
 function WaveGrid() {
   const meshRef = useRef<THREE.Mesh>(null!);
   const mouse = useRef({ x: 0, y: 0 });
+  // Smoothed mouse — lerps toward real position each frame for a trailing feel
+  const smooth = useRef({ x: 0, y: 0 });
 
   // Build a plane geometry we'll deform manually each frame
   const geometry = useMemo(() => {
@@ -27,19 +29,28 @@ function WaveGrid() {
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
-  useFrame(({ clock }) => {
+  useFrame(({ clock }, delta) => {
     const pos = geometry.attributes.position;
     const t = clock.getElapsedTime();
 
-    // Mouse offsets the wave centre slightly
-    const mx = mouse.current.x * 2.5;
-    const my = mouse.current.y * 2.5;
+    // Lerp smoothed mouse toward real position — gives the dip a trailing weight
+    const lerpSpeed = Math.min(delta * 5, 1);
+    smooth.current.x += (mouse.current.x - smooth.current.x) * lerpSpeed;
+    smooth.current.y += (mouse.current.y - smooth.current.y) * lerpSpeed;
+
+    // Map smoothed mouse to grid space (wider range → more visible wave shift)
+    const mx = smooth.current.x * 6;
+    const my = smooth.current.y * 6;
+
+    // Gaussian dip params — radius in grid units, depth relative to wave amplitude
+    const dipR2 = 4.5 * 4.5; // radius²
+    const dipDepth = 1.2;
 
     for (let i = 0; i < pos.count; i++) {
       const x = pos.getX(i);
       const y = pos.getY(i);
 
-      // Distance from mouse-shifted centre
+      // Distance from smoothed mouse position (for ripple origin + dip)
       const dx = x - mx;
       const dy = y - my;
       const dist = Math.sqrt(dx * dx + dy * dy);
@@ -50,7 +61,10 @@ function WaveGrid() {
         Math.sin(x * 0.4 + t * 0.6) * 0.18 +
         Math.sin(y * 0.35 - t * 0.5) * 0.12;
 
-      pos.setZ(i, z);
+      // Gaussian depression under cursor — mesh physically sinks where cursor is
+      const dip = Math.exp(-(dx * dx + dy * dy) / dipR2) * dipDepth;
+
+      pos.setZ(i, z - dip);
     }
     pos.needsUpdate = true;
   });
