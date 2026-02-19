@@ -1,61 +1,54 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from '@/components/ui/card';
-import { Bold } from '@/components/bold';
-
+import { Briefcase } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export function Experience() {
   const t = useTranslations('Experience');
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="mb-12"
-    >
-      <h2 className="mb-8 bg-linear-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-3xl font-bold text-transparent drop-shadow-md dark:from-rose-500 dark:via-indigo-400 dark:to-sky-400">
-        {t('title')}
-      </h2>
 
-      <div className="space-y-6">
-        <Card className="border-slate-200 shadow-sm transition-transform duration-300 hover:scale-[1.02] dark:border-slate-800 dark:bg-slate-950/50">
-          <CardHeader>
-            <div className="flex flex-col justify-between gap-2 md:flex-row md:items-center">
+  return (
+    <section id="experience" className="py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <h2 className="mb-12 font-mono text-2xl font-bold text-[var(--text-bright)] sm:text-3xl">
+          <span className="mr-3 text-[var(--cyan)]">#</span>
+          {t('title')}
+        </h2>
+
+        <div className="relative border-l-2 border-[var(--border-color)] pl-8">
+          {/* Timeline dot */}
+          <div className="absolute top-0 -left-[9px] h-4 w-4 rounded-full border-2 border-[var(--cyan)] bg-[var(--bg)]" />
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 transition-colors duration-300 hover:border-[var(--cyan)]/30"
+          >
+            <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                {/* Job title */}
-                <CardTitle className="text-xl font-bold text-slate-800 duration-300 dark:text-slate-100">
+                <h3 className="flex items-center gap-2 text-lg font-semibold text-[var(--text-bright)]">
+                  <Briefcase size={18} className="text-[var(--cyan)]" />
                   {t('qa.title')}
-                </CardTitle>
-                {/* Company name */}
-                <CardDescription className="text-base text-rose-600 duration-300 dark:text-rose-400">
-                  {t('qa.company')}
-                </CardDescription>
+                </h3>
+                <p className="mt-1 text-[var(--cyan)]">{t('qa.company')}</p>
               </div>
-              {/* Date range */}
-              <span className="text-sm font-medium text-slate-500 duration-300 dark:text-slate-400">
+              <span className="font-mono text-sm text-[var(--text-muted)]">
                 {t('qa.date')}
               </span>
             </div>
-          </CardHeader>
-          {/* Job description */}
-          <CardContent>
-            <p className="text-slate-600 duration-300 dark:text-slate-400">
-              {t.rich('qa.description', {
-                bold: (chunks) => <Bold>{chunks}</Bold>,
-              })}
+            <p className="leading-relaxed text-[var(--text-muted)]">
+              {t('qa.description')}
             </p>
-          </CardContent>
-        </Card>
-      </div>
-    </motion.section>
+          </motion.div>
+        </div>
+      </motion.div>
+    </section>
   );
 }
