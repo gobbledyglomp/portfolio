@@ -55,16 +55,16 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 pb-16 sm:pt-0 sm:pb-0"
     >
       <HeroBackground />
 
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 px-6 text-center sm:px-0">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-4 font-mono text-4xl font-bold text-(--text-bright) sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mb-3 font-mono text-5xl font-bold tracking-tight text-(--text-bright) sm:mb-4 sm:text-5xl md:text-6xl lg:text-7xl"
         >
           {scrambledHeading}
         </motion.h1>
@@ -73,7 +73,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-4"
+          className="mb-4 flex flex-col items-center gap-1.5 sm:mb-6 sm:flex-row sm:justify-center sm:gap-4"
         >
           <span className="font-mono text-sm text-(--cyan) sm:text-base">
             {t('role')}
@@ -89,7 +89,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-(--text-muted) sm:text-lg"
+          className="mx-auto mb-6 max-w-sm text-sm leading-relaxed text-(--text-muted) sm:mb-8 sm:max-w-2xl sm:text-lg"
         >
           {t('intro')}
         </motion.p>
