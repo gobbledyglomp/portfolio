@@ -27,20 +27,12 @@ const projectsData = [
 ];
 
 // Parent: fires whileInView once, propagates to children via staggerChildren
+// Minimal: single clean fade-in for the entire section, no complex staggering/motion
 const gridVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.14, delayChildren: 0.05 },
-  },
-};
-
-// Card: follows parent's state — no independent viewport observer
-const cardVariants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.8, ease: 'easeOut' },
   },
 };
 
@@ -54,25 +46,24 @@ export function Projects() {
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        viewport={{ once: true, margin: '-80px' }}
+        viewport={{ once: true, margin: '-40px' }}
         className="mb-12 font-mono text-2xl font-bold text-(--text-bright) sm:text-3xl"
       >
         <span className="mr-3 text-(--cyan)">#</span>
         {t('title')}
       </motion.h2>
 
-      {/* Grid: single viewport observer, staggers children */}
+      {/* Grid: single viewport observer, fade whole block */}
       <motion.div
         variants={gridVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-60px' }}
+        viewport={{ once: true, margin: '-80px' }}
         className="grid gap-6 sm:grid-cols-2"
       >
         {projectsData.map((project) => (
-          <motion.div
+          <div
             key={project.key}
-            variants={cardVariants}
             className="group flex flex-col rounded-lg border border-(--border-color) bg-(--bg-surface) p-6 transition-all duration-300 hover:border-(--cyan)/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.05)]"
           >
             {/* Title */}
@@ -126,7 +117,7 @@ export function Projects() {
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
         ))}
       </motion.div>
     </section>
