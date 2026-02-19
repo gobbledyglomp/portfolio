@@ -43,9 +43,12 @@ export function Navbar() {
         }
       }, 320);
     } else {
-      // On another page (e.g. /blog) — navigate home with the hash.
       setMobileOpen(false);
-      router.push(`/#${id}` as '/');
+      if (id === 'home') {
+        router.push('/');
+      } else {
+        router.push(`/#${id}` as '/');
+      }
     }
   }
 
