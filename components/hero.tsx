@@ -101,7 +101,7 @@ export function Hero() {
           href="https://github.com/gobbledyglomp"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-md border border-(--border-color) bg-(--bg-surface) px-5 py-2.5 font-mono text-sm text-(--text-muted) transition-all duration-300 hover:border-(--cyan) hover:text-(--cyan) hover:shadow-[0_0_15px_rgba(0,229,255,0.15)]"
+          className="inline-flex items-center gap-2 rounded-md border border-(--border-color) bg-(--bg-surface) px-5 py-2.5 font-mono text-sm text-(--text-muted) transition-[border-color,color,box-shadow] duration-300 hover:border-(--cyan) hover:text-(--cyan) hover:shadow-[0_0_15px_rgba(0,229,255,0.15)]"
         >
           <Github size={18} />
           GitHub
