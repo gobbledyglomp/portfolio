@@ -27,22 +27,24 @@ export function Navbar() {
     href: string
   ) {
     e.preventDefault();
-    setMobileOpen(false);
     const id = href.replace('#', '');
 
     if (isHome) {
-      // On the home page — smooth scroll directly and update URL hash
-      if (id === 'home') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        history.pushState(null, '', ' ');
-      } else {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, '', `#${id}`);
-      }
+      setMobileOpen(false);
+      // Defer scroll until after the mobile menu exit animation (300ms) settles
+      setTimeout(() => {
+        if (id === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          history.pushState(null, '', ' ');
+        } else {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          history.pushState(null, '', `#${id}`);
+        }
+      }, 320);
     } else {
       // On another page (e.g. /blog) — navigate home with the hash.
-      // The browser will jump to the anchor after navigation.
+      setMobileOpen(false);
       router.push(`/#${id}` as '/');
     }
   }
