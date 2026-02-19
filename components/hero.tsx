@@ -95,8 +95,8 @@ export function Hero() {
         </motion.p>
 
         <motion.a
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.4 }}
           href="https://github.com/gobbledyglomp"
           target="_blank"
