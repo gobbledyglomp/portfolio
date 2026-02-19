@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -28,7 +28,7 @@ const projectsData = [
 
 // Parent: fires whileInView once, propagates to children via staggerChildren
 // Minimal: single clean fade-in for the entire section, no complex staggering/motion
-const gridVariants = {
+const gridVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
